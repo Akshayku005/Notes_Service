@@ -15,7 +15,7 @@ import java.util.List;
 public class Notes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long notesId;
 	
 	private String title;
 

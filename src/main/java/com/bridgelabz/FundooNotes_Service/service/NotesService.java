@@ -69,7 +69,7 @@ public class NotesService implements INotesService {
                 isNotePresent.get().setUpdateDate(LocalDateTime.now());
                 isNotePresent.get().setUserId(userId);
                 notesRepository.save(isNotePresent.get());
-                String body = "Note updated successfully with Id " + isNotePresent.get().getId();
+                String body = "Note updated successfully with Id " + isNotePresent.get().getNotesId();
                 String subject = "Note updated Successfully";
                 mailService.sendEmail(isNotePresent.get().getEmailId(), subject, body);
                 return isNotePresent.get();
@@ -315,7 +315,7 @@ public class NotesService implements INotesService {
                 note.setDescription(isNoteAndUserId.get().getDescription());
                 note.setEmailId(isNoteAndUserId.get().getEmailId());
                 note.setLabelId(isNoteAndUserId.get().getLabelId());
-                note.setId(isNoteAndUserId.get().getId());
+                note.setNotesId(isNoteAndUserId.get().getNotesId());
                 note.setPin(isNoteAndUserId.get().isPin());
                 note.setRegisterDate(isNoteAndUserId.get().getRegisterDate());
                 note.setRemindertime(isNoteAndUserId.get().getRemindertime());
